@@ -1,0 +1,19 @@
+- name: backup configuration of all devices
+  cisco.ios.ios_config:
+    backup: yes
+  register: output_config
+
+- name: Rename backup files
+  copy:
+    src: "{{ output_config.backup_path}}"
+    dest: "./backup{{inventory_hostname}}.cfg"
+
+- name: remove no line commands
+  lineinfile:
+    path: "./backup{{inventory_hostname}}.cfg"
+    regexp: 'Current configuration *'
+    state: absent
+
+- name: Save running config 
+  ios_config:
+    save_when: always

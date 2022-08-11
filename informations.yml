@@ -1,0 +1,8 @@
+---
+  - name: recuperation des informations de la machine
+    hosts: all
+    gather_facts: no
+    tasks:
+      - name: display hostname
+        debug:
+          msg: "les param du switch sont: nom: {{ nommachine }} os: {{ os }} ip: {{ ipaddress }}"

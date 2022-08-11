@@ -1,0 +1,206 @@
+Building configuration...
+
+Current configuration : 4178 bytes
+!
+! Last configuration change at 15:01:15 UTC Tue Mar 2 1993 by ansible
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$0ZuW$u.Ykv.dOfs5Cs.l.sPz4a.
+!
+username ansible privilege 15 password 0 ansible
+no aaa new-model
+system mtu routing 1500
+!
+!
+no ip domain-lookup
+ip domain-name cisco.com
+!
+!
+crypto pki trustpoint TP-self-signed-670645632
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-670645632
+ revocation-check none
+ rsakeypair TP-self-signed-670645632
+!
+!
+crypto pki certificate chain TP-self-signed-670645632
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 36373036 34353633 32301E17 0D393330 33303130 30303130 
+  335A170D 32303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3637 30363435 
+  36333230 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100 
+  B27CDF25 FBACC964 DEB3B163 F46F91BD 40804E8E 84624A56 5F3595CD 418AFDDE 
+  B47DB168 94B5333F 3DF38970 3EB97146 885878BE 8FEC297F 4FF4D5E0 8C0F6D12 
+  A85DB664 3D0B75E8 AB2A7568 53298A39 FC80F618 AED5EBAC EBD70D14 FA6DDE91 
+  0CEAB7FA 88D24908 3FE1A7CD 29399A04 086532D0 C3E05CFE 25D8FCC1 CD20D9EF 
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D 
+  23041830 1680147E 5394A280 3CE832DB 2640ABCB EE81C9D1 D9CA3030 1D060355 
+  1D0E0416 04147E53 94A2803C E832DB26 40ABCBEE 81C9D1D9 CA30300D 06092A86 
+  4886F70D 01010505 00038181 006A1DA0 2D0C2A68 426A65F1 AB9F663D 60CB5A65 
+  EFD59850 A176F12A 9C8BE27E 40121E72 6D01BB19 3FD8BDDB 31229EB2 F0A49316 
+  DEAA8A06 BE132F33 64A0ECE9 94D38FEB F1D3D16B 858F1C15 D6328CED 48B67FEE 
+  119BCB06 46E4EAD7 AD99E015 F35DC9E9 1F480766 C7D16C74 79085496 333516DF 
+  334FDCCE D3247881 D5A4AF6E E1
+  	quit
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/11
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/12
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/13
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/14
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/15
+ switchport mode access
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface FastEthernet0/25
+!
+interface FastEthernet0/26
+!
+interface FastEthernet0/27
+!
+interface FastEthernet0/28
+!
+interface FastEthernet0/29
+!
+interface FastEthernet0/30
+!
+interface FastEthernet0/31
+!
+interface FastEthernet0/32
+!
+interface FastEthernet0/33
+!
+interface FastEthernet0/34
+!
+interface FastEthernet0/35
+!
+interface FastEthernet0/36
+!
+interface FastEthernet0/37
+!
+interface FastEthernet0/38
+!
+interface FastEthernet0/39
+!
+interface FastEthernet0/40
+!
+interface FastEthernet0/41
+!
+interface FastEthernet0/42
+!
+interface FastEthernet0/43
+!
+interface FastEthernet0/44
+!
+interface FastEthernet0/45
+!
+interface FastEthernet0/46
+!
+interface FastEthernet0/47
+!
+interface FastEthernet0/48
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.1.85 255.255.255.0
+!
+interface Vlan10
+ no ip address
+!
+interface Vlan20
+ no ip address
+!
+ip http server
+ip http secure-server
+!
+vstack
+!
+line con 0
+ speed 115200
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login
+!
+end

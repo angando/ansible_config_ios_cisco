@@ -1,0 +1,20 @@
+---
+  - name: mise à jour  version os
+    hosts: all
+    gather_facts: yes
+#    vars:
+#      upgrade_ios_version: 12.2(55)SE12
+#    pre_tasks:
+#      - debug:
+#          msg: "checking OS version  devices ..."
+#    roles:
+#      -  check_version
+#      -  backup_running_config
+
+    tasks:
+
+#    roles:
+#      -  transfert_os
+
+    roles:
+     - boot_seq

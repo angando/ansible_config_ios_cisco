@@ -1,0 +1,19 @@
+---
+- name: CHECK CURRENT VERSION
+  debug:
+    msg:
+    - "Current version is {{ ansible_net_version }}"
+    - "Upgrade image is 15.0(2)SE11"
+    
+- name: vérification de la mise à jour
+  debug:
+    msg:
+    - "votre switch n'est pas à jour veuillez le mettre à jour"
+  when: ansible_net_version != upgrade_ios_version
+
+- name: add user privlige 15
+  ios_command:
+    commands:
+      - enable
+      - conf t 
+      - username ansible privilege 15 password ansible

@@ -1,0 +1,9 @@
+---
+  - name: utilisation des templates jinja
+    hosts: all
+    gather_facts: no
+    tasks:
+      - name: affectation des vlans aux interfaces
+        template:
+           src: affectation_vlan.j2
+           dest:  /home/awx/cisco/jinja2.cfg

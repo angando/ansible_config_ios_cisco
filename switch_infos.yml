@@ -1,0 +1,18 @@
+#https://docs.ansible.com/ansible/latest/network/user_guide/network_best_practices_2.5.html
+--- 
+  - name: recuperation info switchs
+    hosts: all
+    gather_facts: yes
+    tasks:
+       - name: recupération ios_version
+         copy:
+            content: |
+              IOS device info:
+               {% for host in groups['switchs'] %}
+               Hostname: {{ hostvars[host].ansible_net_hostname }}
+               Version: {{ hostvars[host].ansible_net_version }}
+               Model: {{ hostvars[host].ansible_net_model }}
+               Serial: {{ hostvars[host].ansible_net_serialnum }}
+               {% endfor %}
+            dest: /home/awx/cisco/sauvegardes/{{ inventory_hostname }}.info
+         run_once: yes

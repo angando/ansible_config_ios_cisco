@@ -1,0 +1,18 @@
+range_10_15_vlan10:
+
+       - fastEthernet 0/10
+       - fastEthernet 0/11 
+       - fastEthernet 0/12
+       - fastEthernet 0/13
+       - fastEthernet 0/14
+       - fastEthernet 0/15
+
+range_20_25_vlan20:
+  
+    - fastEthernet 0/20
+    - fastEthernet 0/21 
+    - fastEthernet 0/22
+    - fastEthernet 0/23
+    - fastEthernet 0/24
+    - fastEthernet 0/25
+

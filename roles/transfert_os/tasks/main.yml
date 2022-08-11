@@ -1,0 +1,11 @@
+- name: activate scp
+  ios_command:
+   commands:
+    - enable
+    - conf t
+    -  ip scp server enable
+  
+- name: transfer Ios to devices
+  ansible.netcommon.net_put:
+    src: "/home/awx/cisco/images/c2960-lanbasek9-mz.150-2.SE10a.bin"
+    dest: "flash:/c2960-lanbasek9-mz.150-2.SE10a.bin"

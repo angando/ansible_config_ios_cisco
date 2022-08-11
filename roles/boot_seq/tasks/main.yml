@@ -1,0 +1,15 @@
+- name: Change Boot Variable to new image
+  ios_command:
+    commands:
+        - enable
+        - conf t 
+        - boot system flash:"{{ version_150SE10a }}"
+        - do wr
+
+- name: Reload the Device 
+  cli_command:
+     command: reload
+     prompt:
+        - confirm
+     answer:
+        - 'y'

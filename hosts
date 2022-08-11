@@ -1,0 +1,33 @@
+#https://docs.ansible.com/ansible/latest/network/user_guide/platform_ios.html
+#https://docs.ansible.com/ansible/latest/network/getting_started/network_connection_options.html
+#https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
+#https://docs.ansible.com/ansible/latest/user_guide/become.html
+
+#Pour les vieux équipements cisco rajouter les lignes suivantes dans la configuration de /etc/ssh/ssh_config
+#KexAlgorithms +diffie-hellman-group1-sha1
+#HostkeyAlgorithms +ssh-rsa
+#Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+
+
+[switchs]
+switch-01 ansible_host=192.168.1.85
+
+
+[switchs:vars]
+env=production
+ansible_user=ansible
+#ansible_become_password=cisco
+
+[all:vars]
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=cisco.ios.ios
+ansible_become=yes
+ansible_become_method=enable
+#ansible_user=ansible
+
+
+[network:children]
+switchs
+
+[osversion:children]
+switchs

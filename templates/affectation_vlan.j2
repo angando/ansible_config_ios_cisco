@@ -1,0 +1,18 @@
+{% for interface in range_10_15_vlan10 %} 
+!
+interface {{ interface }}
+switchport mode access
+switchport access vlan 10
+exit
+!
+{% endfor %}
+
+{% for interface in range_20_25_vlan20 %}
+!
+interface {{ interface }}
+switchport mode access
+switchport access vlan 20
+exit
+!
+{% endfor %}
+

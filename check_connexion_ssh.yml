@@ -1,0 +1,8 @@
+---
+- name:  Wait for device to come back online
+  hosts:  all
+  gather_facts: no
+  tasks:
+    -  name:  check connexion ssh
+       command: ssh ansible@{{ inventory_hostname }} 
+#       delegate_to: localhost

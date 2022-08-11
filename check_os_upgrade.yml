@@ -1,0 +1,19 @@
+---
+- name: check current version after update
+  hosts: all
+  gather_facts: yes
+  vars:
+    upgrade_ios_version:  "150-2.SE10a"
+
+  tasks:
+    
+    - name: current version
+      debug:
+         msg:
+           - "Current version is {{ ansible_net_version }}"
+
+    - name: compare current version to uppgrade ios version
+      assert:
+        that: { "ansible_net_version  ==  '{{ upgrade_ios_version }}'" }
+        success_msg: "version'{{ ansible_net_version }}' has been successfully installed on your device: {{inventory_hostname}}"
+        fail_msg: " version'{{ ansible_net_version}}' has not been installed on your device: {{inventory_hostname}}"
