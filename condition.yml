@@ -7,4 +7,4 @@
         debug:
           msg: "les param du switch sont: nom: {{ nommachine }} os: {{ os }} ip: {{ ipaddress }}"
         when: 
-          - inventory_hostname == "S01"
+          - inventory_hostname == "switch-01"

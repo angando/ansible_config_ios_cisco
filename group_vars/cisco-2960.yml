@@ -1,0 +1,12 @@
+ansible_connection: ansible.netcommon.network_cli
+ansible_network_os: cisco.ios.ios
+
+
+
+ports:
+    -  int fa0/5
+    -  interface FastEthernet 0/6
+    -  interface FastEthernet 0/7
+    -  interface FastEthernet 0/8
+    -  interface FastEthernet 0/9
+    -  interface FastEthernet 0/10 
