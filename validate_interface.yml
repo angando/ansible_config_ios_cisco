@@ -1,0 +1,18 @@
+---
+- name : validate interface
+  hosts: switch-2960
+  gather_facts: no
+  tasks:
+    - name: validate config port security
+      ios_command:
+        commands:
+        - sh run {{ item }} # ne pas mettre des doubles quotes car le module ne comprendra la la châine de caractère
+
+#        -  sh run interface FastEthernet 0/7
+      #with_items: " {{ ports }} "
+      loop:  "{{ ports }}"
+#       - interface fa0/6
+      register:  show
+    - name: show result interface
+      debug:
+        msg: "{{ show }}"

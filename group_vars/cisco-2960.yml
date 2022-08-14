@@ -9,4 +9,4 @@ ports:
     -  interface FastEthernet 0/7
     -  interface FastEthernet 0/8
     -  interface FastEthernet 0/9
-    -  interface FastEthernet 0/10 
+    -  interface FastEthernet 0/10
