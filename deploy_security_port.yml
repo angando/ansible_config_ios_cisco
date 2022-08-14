@@ -5,17 +5,17 @@
   tasks:
     - name: configure port security
       ios_config:
-         lines:
-           - switchport mode access
-           - switchport port-security
-           - switchport port-security mac-address sticky
-           - switchport port-security maximum 2
-           - switchport port-security violation shutdown
-           - switchport port-security aging time 20
+        lines:
+          - switchport mode access
+          - switchport port-security
+          - switchport port-security mac-address sticky
+          - switchport port-security maximum 2
+          - switchport port-security violation shutdown
+          - switchport port-security aging time 20
         
-         parents: '{{ item }}'
+        parents: '{{ item }}'
       with_items: " {{ ports }} "
            
     - name: save running to startup when modified
-      cisco.ios.ios_config:
+      ios_config:
         save_when: modified
