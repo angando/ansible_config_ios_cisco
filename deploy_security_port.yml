@@ -1,6 +1,6 @@
 ---
 - name: deploy ports security
-  hosts: all
+  hosts: switch-2960
   gather_facts: no
   tasks:
     - name: configure port security
