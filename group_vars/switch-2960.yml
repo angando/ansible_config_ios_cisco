@@ -1,5 +1,5 @@
 ansible_connection: network_cli
-ansible_network_os: cisco.ios.ios
+ansible_network_os: ios
 
 
 
