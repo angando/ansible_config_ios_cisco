@@ -16,11 +16,11 @@ switch-01 ansible_host=192.168.1.85
 [switchs:vars]
 env=production
 ansible_user=ansible
-#ansible_become_password=cisco
+ansible_become_password=cisco
 
 [all:vars]
 ansible_connection=ansible.netcommon.network_cli
-ansible_network_os=cisco.ios.ios
+#ansible_network_os=cisco.ios.ios
 ansible_become=yes
 ansible_become_method=enable
 #ansible_user=ansible
