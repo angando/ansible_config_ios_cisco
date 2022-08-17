@@ -1,0 +1,14 @@
+{
+    "interfaces": {
+        "FastEthernet0/0": {
+            "neighbors": {
+                "2.2.2.2": {
+                    "address": "10.0.0.2",
+                    "dead_time": "00:00:35",
+                    "priority": 1,
+                    "state": "FULL/BDR"
+                }
+            }
+        }
+    }
+}
